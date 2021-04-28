@@ -1,6 +1,9 @@
 # flutix
 
-A new Flutter project.
+A ticket booking application to watch cinema films.
+mentor : 
+- Erico Darmawan
+- Angga Risky
 
 ## Getting Started
 
