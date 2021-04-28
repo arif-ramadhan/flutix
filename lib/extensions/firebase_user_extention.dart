@@ -1,14 +1,15 @@
 part of 'extensions.dart';
 
-extension FirebaseUserExtension on UserCredential {
-  User convertToUser(
+extension FirebaseUserExtension on User {
+  Users convertToUser(
           {String name = 'No Name',
           List<String> selectedGenres = const [],
           String selectedLanguage = 'English',
           int balance = 50000}) =>
-      User(this.id, this.email,
+      Users(this.uid, this.email,
           name: name,
           selectedGenres: selectedGenres,
-          selectedLanguage: selectedLanguage,
-          balance: balance);
+          selectedLanguage: selectedLanguage);
+
+  Future<Users> fromFireStore() async => await UserServices.getUser(this.uid);
 }
